@@ -4,6 +4,8 @@
 #include<vector>
 using namespace std;
 
+// time complexity o(N*N)
+// space complexity o(N)
 int max_profit(vector<int> weights, vector<int> money, int W){
 
     vector<vector<int>> table(weights.size()+1, vector<int>(W+1, 0));
