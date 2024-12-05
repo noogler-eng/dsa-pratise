@@ -8,12 +8,12 @@ using namespace std;
 
 bool dfs(vector<int> adj[], vector<bool> &vis_1, vector<bool> &vis_2, int node){
     vis_1[node] = true;
-    
+    vis_2[node] = true;
+
     for(auto it: adj[node]){
         if(vis_1[it] != true) return dfs(adj, vis_1, vis_2, it);
         if(vis_1[it] == true && vis_2[it] == true) return true;
     }
-
     // comming  back and marking the current node as false
     vis_2[node] = false;
     return false;

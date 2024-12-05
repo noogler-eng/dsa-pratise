@@ -9,8 +9,8 @@
 #include<vector>
 using namespace std;
 
-// if it is bypartitie cyclic graph then it is even
-// if it is non bypartitie cyclic graph then odd
+// if it is bypartitie cyclic graph then it is odd
+// if it is non bypartitie cyclic graph then even
 
 // here we are simply checking if the graph is bipartite or not
 int col[10005];
