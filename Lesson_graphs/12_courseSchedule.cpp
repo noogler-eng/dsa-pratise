@@ -1,4 +1,6 @@
 // QUESTION - https://leetcode.com/problems/course-schedule/
+// simply if we detect the cycle in graph then it can never be converted into toposort
+// condition for totposort -> DAG(directed acyclic graph)
 
 #include<iostream>
 #include<vector>
