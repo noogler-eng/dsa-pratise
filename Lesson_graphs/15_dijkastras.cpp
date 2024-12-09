@@ -23,7 +23,7 @@ vector<int> minimum_distance_of_nodes_from_source_node(vector<pair<int, int>> ad
         mq.pop();
 
         for(auto it: adj[node]){
-            int new_node = it.first;
+            int new_node = it.first; 
             int addon = it.second;
             // making the new distance 
             int new_dist = addon + value;
