@@ -4,6 +4,8 @@
 
 // in dijkstra we added the distance then it will be minimum then the travell back to prev
 // but in -ve cycle on previos traversal it becomes more premium.
+// dijakstra is an algo take o(nlogn).
+// bellman ford take (n*n)
 
 // in -ve edges dijkasta ends up in infinity cycle.
 
