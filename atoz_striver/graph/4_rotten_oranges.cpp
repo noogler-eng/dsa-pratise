@@ -5,6 +5,8 @@
 #include<queue>
 using namespace std;
 
+// time complexity o(N*N) + o(v + 2E)
+// space complexity o(N) + o(8)
 class Solution {
 public:
     int orangesRotting(vector<vector<int>>& grid) {
