@@ -15,7 +15,7 @@ class Node {
 
 // time complexity o(2N)
 // space complexity o(1)
-Node* segregate(Node* head) {
+Node* segregate1(Node* head) {
     int cnt0 = 0;
     int cnt1 = 0;
     int cnt2 = 0;
@@ -48,4 +48,48 @@ Node* segregate(Node* head) {
     }
 
     return head;
+}
+
+// we can also do this in one go 
+Node* segregate(Node* head) {
+    Node* zero = new Node(-1);
+    Node* zeroStart = zero;
+    Node* one = new Node(-1);
+    Node* oneStart = one;
+    Node* two = new Node(-1);
+    Node* twoStart = two;
+
+    Node* temp = head;
+    while(temp!=NULL){
+        if(temp->data == 0) {
+            zero->next = new Node(0);
+            zero = zero->next;
+        }
+        else if(temp->data == 1) {
+            one->next = new Node(1);
+            one = one->next;
+        }
+        else {
+            two->next = new Node(2);
+            two = two->next;
+        }
+        temp = temp->next;
+    }
+    
+    Node* dummy = new Node(-1);
+    Node* ans = dummy;
+    
+    if(zeroStart->next!=NULL) {
+        dummy->next = zeroStart->next;
+        dummy = zero;
+    };
+    if(oneStart->next != NULL) {
+        dummy->next = oneStart->next;
+        dummy = one;
+    }
+    
+    if(twoStart->next != NULL) {
+        dummy->next = twoStart->next;
+    }
+    return ans->next;
 }
