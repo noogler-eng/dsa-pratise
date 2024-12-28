@@ -16,6 +16,7 @@ using namespace std;
 // Explanation: Alice's hand can not be rearranged into groups of 4.
 
 // In the worst case we going to all the elements once
+// time complexity o(N+N)
 class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
