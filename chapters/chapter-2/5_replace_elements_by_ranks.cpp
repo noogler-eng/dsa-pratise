@@ -5,19 +5,29 @@
 #include<vector>
 using namespace std;
 
-vector<int> replaceWithRank(vector<int> &arr, int N){
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    for(int i=0; i<arr.size(); i++){
-        pq.push({arr[i], i});
-    }
+class Solution{
+public:
 
-    int i=0;
-    while(!pq.empty()){
-        int index = pq.top().second;
-        arr[index] = i+1;
-        i++;
-        pq.pop();
-    }
+    vector<int> replaceWithRank(vector<int> &arr, int N){
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        for(int i=0; i<arr.size(); i++){
+            pq.push({arr[i], i});
+        }
 
-    return arr;
-}
+        int i=0;
+        while(!pq.empty()){
+            int index = pq.top().second;
+            int ele = pq.top().first;
+            pq.pop();
+            while(!pq.empty() && pq.top().first == ele){
+                int index = pq.top().second;
+                arr[index] = i+1;
+                pq.pop();
+            }
+            arr[index] = i+1;
+            i++;
+        }
+
+        return arr;
+    }
+};
