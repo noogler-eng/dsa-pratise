@@ -55,3 +55,25 @@ public:
 };
 
 // any perfect binary tree has all the complete nodes at the last level
+
+// we can also apply the dfs for this 
+class Solution {
+public:
+    void dfs(TreeNode* leftChild, TreeNode* rightChild, int currentLevel) {
+        if (leftChild == NULL || rightChild == NULL)
+            return;
+        // here we considering even postions as we dont take root;s level as 0 
+        // we directly starting from even
+        if (currentLevel % 2 == 0) {
+            swap(leftChild->val, rightChild->val);
+        }
+
+        dfs(leftChild->left, rightChild->right, currentLevel + 1);
+        dfs(leftChild->right, rightChild->left, currentLevel + 1);
+    }
+    // odd levels meaning level with 1, 3, 5, ...
+    TreeNode* reverseOddLevels(TreeNode* root) {
+        dfs(root->left, root->right, 0);
+        return root;
+    }
+};
