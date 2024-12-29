@@ -16,6 +16,8 @@ struct TreeNode {
 
 class Solution {
 public:
+    // time complexity o(N)
+    // space complexity o(N)
     // odd levels meaning level with 1, 3, 5, ...
     vector<vector<TreeNode*>> reversedLevels;
     TreeNode* reverseOddLevels(TreeNode* root) {
@@ -57,6 +59,9 @@ public:
 // any perfect binary tree has all the complete nodes at the last level
 
 // we can also apply the dfs for this 
+// time complexity o(N) traversing each node
+// space complexity o(logN)
+// space complexity for DFS traversal is o(logN)
 class Solution {
 public:
     void dfs(TreeNode* leftChild, TreeNode* rightChild, int currentLevel) {
