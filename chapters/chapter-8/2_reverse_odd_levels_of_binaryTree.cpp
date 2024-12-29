@@ -53,3 +53,5 @@ public:
         return root;
     }
 };
+
+// any perfect binary tree has all the complete nodes at the last level
