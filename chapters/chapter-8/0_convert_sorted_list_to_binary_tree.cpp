@@ -24,6 +24,8 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// time complexity o(logN)
+// space complity o(1)
 class Solution {
 public:
     // this is how we find the middle of the linkedlist
