@@ -36,3 +36,27 @@ public:
         return sum;
     }
 };
+
+// iterative way
+// time complexity o(N)
+// space complexity o(N)
+class Solution {
+public:
+    int sumNumbers(TreeNode* root){
+        if(root == NULL) return;
+        queue<pair<TreeNode*, int>> q;
+        int sum = 0;
+        q.push({root, 0});
+        
+        while(!q.empty()){
+            TreeNode* node = q.front().first;
+            int value = q.front().second;
+
+            int new_value = value + node->val;
+            if(node->left == NULL && node->right == NULL) sum+=new_value;
+            if(node->left!=NULL) sumNumbers(node->left);
+            if(node->right!=NULL) sumNumbers(node->right);
+        }
+        return sum;
+    }
+};
